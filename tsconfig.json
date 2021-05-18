@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"outDir": "dist",
+		"jsx": "react",
+
+		// Node 12
+		"module": "commonjs",
+		"target": "ES2019"
+	},
+	"include": [
+		"src"
+	]
+}
