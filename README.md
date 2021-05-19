@@ -21,6 +21,7 @@ Command-line tool to capture clean and simple tweet snapshots.
 - 🌐 Customizable locale
 - 🙅‍♀️ No "Share" & "Info" buttons
 - 💖 No watermark
+- 🔥 Snap multiple tweets at once
 
 <sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
