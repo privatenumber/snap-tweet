@@ -1,4 +1,4 @@
-# 📸 snap-tweet <a href="https://npm.im/snap-tweet"><img src="https://badgen.net/npm/v/snap-tweet"></a> <a href="https://npm.im/snap-tweet"><img src="https://badgen.net/npm/dm/snap-tweet"></a> <a href="https://packagephobia.now.sh/result?p=snap-tweet"><img src="https://packagephobia.now.sh/badge?p=snap-tweet"></a>
+# 📸 snap-tweet <a href="https://npm.im/snap-tweet"><img src="https://badgen.net/npm/v/snap-tweet"></a> <a href="https://packagephobia.now.sh/result?p=snap-tweet"><img src="https://packagephobia.now.sh/badge?p=snap-tweet"></a>
 
 Command-line tool to capture clean and simple tweet snapshots.
 
