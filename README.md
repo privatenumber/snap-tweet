@@ -66,7 +66,7 @@ snap-tweet https://twitter.com/github/status/1390807474748416006 --width 900
 
 <p align="center">
   <a href="https://twitter.com/github/status/1390807474748416006">
-    <img src=".github/example-width-900.png" width="40%">
+    <img src=".github/example-width-900.png" width="50%">
   </a>
   <br>
   <em>Tweet with a 900px width</em>
@@ -80,7 +80,7 @@ snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja
 
 <p align="center">
   <a href="https://twitter.com/TwitterJP/status/578707432">
-    <img src=".github/example-locale-ja.png" width="40%">
+    <img src=".github/example-locale-ja.png" width="50%">
   </a>
   <br>
   <em>Using the Japanese locale (ja)</em>
