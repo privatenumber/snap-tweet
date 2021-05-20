@@ -3,13 +3,17 @@
 Command-line tool to capture clean and simple tweet snapshots.
 
 <p align="center">
-  <img src=".github/example.png" width="60%">
+  <a href="https://twitter.com/jack/status/20">
+    <img src=".github/example.png" width="60%">
+  </a>
   <br>
   <em>Light mode</em>
 </p>
 
 <p align="center">
-  <img src=".github/example-dark.png" width="60%">
+  <a href="https://twitter.com/jack/status/20">
+    <img src=".github/example-dark.png" width="60%">
+  </a>
   <br>
   <em>Dark mode</em>
 </p>
