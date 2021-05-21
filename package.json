@@ -20,7 +20,7 @@
 		"bin/snap-tweet.js",
 		"dist"
 	],
-	"main": "dist/snap-tweet.js",
+	"main": "dist/tweet-camera.js",
 	"bin": "bin/snap-tweet.js",
 	"scripts": {
 		"build": "rm -rf dist && tsup src --dts",
