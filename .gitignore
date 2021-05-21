@@ -24,3 +24,6 @@ node_modules/
 
 # Distribution
 dist
+
+# Testing data
+tests/downloads
