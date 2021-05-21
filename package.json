@@ -23,7 +23,7 @@
 	"main": "dist/tweet-camera.js",
 	"bin": "bin/snap-tweet.js",
 	"scripts": {
-		"build": "rm -rf dist && tsup src --dts --external '../package.json'",
+		"build": "rm -rf dist && tsup src --dts --minify --external '../package.json'",
 		"dev": "esno src/cli.ts",
 		"lint": "eslint ."
 	},
