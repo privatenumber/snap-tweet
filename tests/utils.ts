@@ -1,6 +1,5 @@
 import path from 'path';
 import fs from 'fs';
-import assert from 'assert';
 import execa from 'execa';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
@@ -30,13 +29,16 @@ export async function comparePngs(
 }
 
 export async function snapTweet(...arguments_: string[]) {
-	const { stdout } = await execa('./bin/snap-tweet.js', [
+	const spawnedProcess = await execa('./bin/snap-tweet.js', [
 		...arguments_,
 		'--output-dir',
 		downloadsDirectory,
 	]);
 
-	const snapFileName = stdout.match(/\/downloads\/(.+\.png)/)?.[1];
-	assert(snapFileName, 'No snap file found');
+	const snapFileName = spawnedProcess.stdout.match(/\/downloads\/(.+\.png)/)?.[1];
+	if (!snapFileName) {
+		console.log(spawnedProcess);
+		throw new Error('No snap file found');
+	}
 	return `./tests/downloads/${snapFileName}`;
 }
