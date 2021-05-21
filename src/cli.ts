@@ -4,6 +4,7 @@ import cac from 'cac';
 import unusedFilename from 'unused-filename';
 import tempy from 'tempy';
 import open from 'open';
+import makeDir from 'make-dir';
 import renderTaskRunner from './render-task-runner';
 import TweetCamera from './tweet-camera';
 
@@ -89,7 +90,10 @@ const cli = cac('snap-tweet')
 			const fileName = `snap-tweet-${recommendedFileName}`;
 
 			if (options.outputDir) {
-				const filePath = await unusedFilename(path.resolve(options.outputDir, fileName));
+				const outputDirectory = path.resolve(options.outputDir);
+				await makeDir(outputDirectory);
+
+				const filePath = await unusedFilename(path.join(outputDirectory, fileName));
 				await fs.promises.writeFile(filePath, snapshot);
 
 				task.success(`📸 Tweet #${tweetId} by @${username} saved to ${filePath}`);
