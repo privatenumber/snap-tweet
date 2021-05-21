@@ -35,5 +35,5 @@ jobs:
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
-        name: code-coverage-report
+        name: snaps-${{ matrix.os }}-${{ matrix.node-version }}
         path: tests/downloads
