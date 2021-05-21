@@ -9,11 +9,12 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
         node-version: [12.x, 14.x]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout
@@ -31,7 +32,7 @@ jobs:
     - name: Test
       run: npm run test --if-present
     - name: Archive test results
-      if: ${{ success() }}
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: code-coverage-report
