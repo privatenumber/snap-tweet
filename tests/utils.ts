@@ -35,9 +35,10 @@ export async function snapTweet(...arguments_: string[]) {
 		downloadsDirectory,
 	]);
 
-	const snapFileName = spawnedProcess.stdout.replace(/\n/g, '').match(/\/downloads\/(.+\.png)/)?.[1];
+	const stdout = spawnedProcess.stdout.replace(/\n/g, '');
+	const snapFileName = stdout.match(/\/downloads\/(.+\.png)/)?.[1];
 	if (!snapFileName) {
-		console.log(spawnedProcess);
+		console.log({ stdout });
 		throw new Error('No snap file found');
 	}
 	return `./tests/downloads/${snapFileName}`;
