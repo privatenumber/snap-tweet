@@ -23,7 +23,7 @@
 	"main": "dist/tweet-camera.js",
 	"bin": "bin/snap-tweet.js",
 	"scripts": {
-		"build": "rm -rf dist && tsup src --dts --minify --external '../package.json'",
+		"build": "rm -rf dist && tsup src --dts --minify --external '../package.json' --external 'yoga-layout-prebuilt'",
 		"dev": "esno src/cli.ts",
 		"lint": "eslint ."
 	},
@@ -36,8 +36,7 @@
 		"*.{js,ts}": "eslint"
 	},
 	"dependencies": {
-		"ink": "^3.0.8",
-		"react": "^16.8.0"
+		"yoga-layout-prebuilt": "1.10.0"
 	},
 	"devDependencies": {
 		"@pvtnbr/eslint-config-typescript": "^0.1.16",
@@ -53,6 +52,8 @@
 		"lint-staged": "^10.5.4",
 		"open": "^8.0.7",
 		"p-retry": "^4.5.0",
+		"ink": "^3.0.8",
+		"react": "^16.8.0",
 		"tempy": "^1.0.1",
 		"tsup": "^4.10.1",
 		"typescript": "^4.2.4",
