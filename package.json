@@ -37,7 +37,7 @@
 	},
 	"dependencies": {
 		"ink": "^3.0.8",
-		"react": "^17.0.2"
+		"react": "^16.8.0"
 	},
 	"devDependencies": {
 		"@pvtnbr/eslint-config-typescript": "^0.1.16",
