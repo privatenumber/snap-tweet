@@ -90,6 +90,21 @@ snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja
   <em>Using the Japanese locale (ja)</em>
 </p>
 
+### Show Thread
+Use the `--show-thread` flag to include the parent tweet in the screenshot.
+
+```sh
+snap-tweet https://twitter.com/jack/status/1108487919969275904 --show-thread
+```
+
+<p align="center">
+  <a href="https://twitter.com/jack/status/1108487919969275904">
+    <img src=".github/example-thread.png" width="50%">
+  </a>
+  <br>
+  <em>Parent tweet inlcuded in the screenshot</em>
+</p>
+
 ### Multiple tweets
 Snap multiple tweets at once by passing in multiple tweet URLs.
 ```sh
