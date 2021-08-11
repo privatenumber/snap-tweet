@@ -38,6 +38,13 @@ const cli = cac('snap-tweet')
 			default: 'en',
 		},
 	)
+	.option(
+		'-c, --chrome-path <path>',
+		'Manually provide chrome path',
+		{
+			default: undefined,
+		},
+	)
 	.help()
 	.version(version)
 	.example('$ snap-tweet https://twitter.com/jack/status/20')
@@ -69,7 +76,7 @@ const cli = cac('snap-tweet')
 		process.exit(0);
 	}
 
-	const tweetCamera = new TweetCamera();
+	const tweetCamera = new TweetCamera(options.chromePath);
 	const startTask = renderTaskRunner();
 
 	await Promise.all(tweets.map(async ({

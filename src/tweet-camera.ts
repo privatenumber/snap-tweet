@@ -65,16 +65,18 @@ class TweetCamera {
 
 	initializingChrome: Promise<any>;
 
-	constructor() {
-		this.initializingChrome = this.initializeChrome();
+	constructor(chromePath: string) {
+		this.initializingChrome = this.initializeChrome(chromePath);
 	}
 
-	async initializeChrome() {
+	async initializeChrome(chromePath: string) {
+		const pathOption = chromePath === undefined ? {} : { chromePath };
 		const chrome = await launch({
 			chromeFlags: [
 				'--headless',
 				'--disable-gpu',
 			],
+			...pathOption,
 		});
 
 		exitHook(() => {

@@ -90,6 +90,12 @@ snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja
   <em>Using the Japanese locale (ja)</em>
 </p>
 
+### Custom path for Chrome binary
+You can specify the path for the Chrome binary if it is not autodetected or you want to use another binary.
+```sh
+snap-tweet https://twitter.com/TwitterJP/status/578707432 --chrome-path /usr/bin/chrome
+```
+
 ### Show Thread
 Use the `--show-thread` flag to include the parent tweet in the screenshot.
 
@@ -124,6 +130,7 @@ Options:
   -t, --show-thread        Show tweet thread
   -d, --dark-mode          Show tweet in dark mode
   -l, --locale <locale>    Locale (default: en)
+  -c, --chrome-path <path> Full path of the Chrome binary to use
   -h, --help               Display this message
   -v, --version            Display version number
 ```
