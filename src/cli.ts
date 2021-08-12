@@ -109,6 +109,12 @@ const cli = cac('snap-tweet')
 
 	await tweetCamera.close();
 })(cli.parse()).catch((error) => {
-	console.log('[snap-tweet] Error:', error.message);
+	if (error.code === 'ERR_LAUNCHER_NOT_INSTALLED') {
+		console.log(
+			'[snap-tweet] Error: Chrome could not be automatically found! Manually pass in the Chrome binary path with the CHROME_PATH environment variable: CHROME_PATH=/path/to/chrome npx snap-tweet ...',
+		);
+	} else {
+		console.log('[snap-tweet] Error:', error.message);
+	}
 	process.exit(1);
 });
