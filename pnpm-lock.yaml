@@ -4,8 +4,8 @@ specifiers:
   '@pvtnbr/eslint-config-typescript': ^0.1.22
   '@types/react': ^17.0.19
   cac: ^6.7.3
-  chrome-launcher: ^0.13.4
-  chrome-remote-interface: ^0.30.0
+  chrome-launcher: ^0.14.0
+  chrome-remote-interface: ^0.31.0
   eslint: ^7.32.0
   esno: ^0.9.1
   exit-hook: ^2.2.1
@@ -29,8 +29,8 @@ devDependencies:
   '@pvtnbr/eslint-config-typescript': 0.1.22_eslint@7.32.0+typescript@4.3.5
   '@types/react': 17.0.19
   cac: 6.7.3
-  chrome-launcher: 0.13.4
-  chrome-remote-interface: 0.30.0
+  chrome-launcher: 0.14.0
+  chrome-remote-interface: 0.31.0
   eslint: 7.32.0
   esno: 0.9.1
   exit-hook: 2.2.1
@@ -394,8 +394,8 @@ packages:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
     dev: true
 
-  /@types/node/15.0.1:
-    resolution: {integrity: sha512-TMkXt0Ck1y0KKsGr9gJtWGjttxlZnnvDtphxUOSd0bfaR6Q1jle+sPvrzNR1urqYTWMinoKvjKfXUGsumaO1PA==}
+  /@types/node/16.6.2:
+    resolution: {integrity: sha512-LSw8TZt12ZudbpHc6EkIyDM3nHVWKYrAvGy6EAJfNfjusbwnThqjqxUKKRwuV3iWYeW/LYMzNgaq3MaLffQ2xA==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -764,23 +764,22 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /chrome-launcher/0.13.4:
-    resolution: {integrity: sha512-nnzXiDbGKjDSK6t2I+35OAPBy5Pw/39bgkb/ZAFwMhwJbdYBp6aH+vW28ZgtjdU890Q7D+3wN/tB8N66q5Gi2A==}
+  /chrome-launcher/0.14.0:
+    resolution: {integrity: sha512-W//HpflaW6qBGrmuskup7g+XJZN6w03ko9QSIe5CtcTal2u0up5SeReK3Ll1Why4Ey8dPkv8XSodZyHPnGbVHQ==}
+    engines: {node: '>=12.13.0'}
     dependencies:
-      '@types/node': 15.0.1
-      escape-string-regexp: 1.0.5
+      '@types/node': 16.6.2
+      escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
-      lighthouse-logger: 1.2.0
-      mkdirp: 0.5.5
-      rimraf: 3.0.2
+      lighthouse-logger: 1.3.0
     dev: true
 
-  /chrome-remote-interface/0.30.0:
-    resolution: {integrity: sha512-krIHiWQCRvlLhHmjWuGgHJfqhj2Jcj3mtVebq3c/Pwv4RF7P0A2eSy6YRqrBPwcziYJrtsPGR0rm7uCe4987rQ==}
+  /chrome-remote-interface/0.31.0:
+    resolution: {integrity: sha512-DrD4ZACKAFT3lVldKVDRlYrI9bmZSk7kYcf+OKwFpBM9fZyCPvVKb+yGnmXBkHv7/BEkW8ouu+EHRugAOJ3pPg==}
     hasBin: true
     dependencies:
       commander: 2.11.0
-      ws: 7.4.5
+      ws: 7.5.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2126,8 +2125,8 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /lighthouse-logger/1.2.0:
-    resolution: {integrity: sha512-wzUvdIeJZhRsG6gpZfmSCfysaxNEr43i+QT+Hie94wvHDKFLi4n7C2GqZ4sTC+PH5b5iktmXJvU87rWvhP3lHw==}
+  /lighthouse-logger/1.3.0:
+    resolution: {integrity: sha512-BbqAKApLb9ywUli+0a+PcV04SyJ/N1q/8qgCNe6U97KbPCS1BTksEuHFLYdvc8DltuhfxIUBqDZsC0bBGtl3lA==}
     dependencies:
       debug: 2.6.9
       marky: 1.2.2
@@ -2299,13 +2298,6 @@ packages:
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
-    dev: true
-
-  /mkdirp/0.5.5:
-    resolution: {integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==}
-    hasBin: true
-    dependencies:
-      minimist: 1.2.5
     dev: true
 
   /modify-filename/1.1.0:
@@ -3338,6 +3330,19 @@ packages:
 
   /ws/7.4.5:
     resolution: {integrity: sha512-xzyu3hFvomRfXKH8vOFMU3OguG6oOvhXMo3xsGy3xWExqaM2dxBbVxuD99O7m3ZUFMvvscsZDqxfgMaRr/Nr1g==}
+    engines: {node: '>=8.3.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: true
+
+  /ws/7.5.3:
+    resolution: {integrity: sha512-kQ/dHIzuLrS6Je9+uv81ueZomEwH0qVYstcAQ4/Z93K8zeko9gtAbttJWzoC5ukqXY1PpoouV3+VSOqEAFt5wg==}
     engines: {node: '>=8.3.0'}
     peerDependencies:
       bufferutil: ^4.0.1
