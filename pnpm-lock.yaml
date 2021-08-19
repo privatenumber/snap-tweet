@@ -10,8 +10,8 @@ specifiers:
   esno: ^0.9.1
   exit-hook: ^2.2.1
   husky: ^4.3.8
-  ink: ^3.0.8
-  ink-task-list: ^1.0.1
+  ink: ^3.0.9
+  ink-task-list: ^1.1.0
   lint-staged: ^11.1.2
   open: ^8.0.7
   p-retry: ^4.5.0
@@ -35,8 +35,8 @@ devDependencies:
   esno: 0.9.1
   exit-hook: 2.2.1
   husky: 4.3.8
-  ink: 3.0.8_6271f60ef7a519b0e7b4db68b8cdff1f
-  ink-task-list: 1.0.1_ink@3.0.8+react@16.14.0
+  ink: 3.0.9_6271f60ef7a519b0e7b4db68b8cdff1f
+  ink-task-list: 1.1.0_ink@3.0.9+react@16.14.0
   lint-staged: 11.1.2
   open: 8.0.7
   p-retry: 4.5.0
@@ -586,11 +586,6 @@ packages:
       type-fest: 0.21.3
     dev: true
 
-  /ansi-regex/4.1.0:
-    resolution: {integrity: sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==}
-    engines: {node: '>=6'}
-    dev: true
-
   /ansi-regex/5.0.0:
     resolution: {integrity: sha512-bY6fj56OUQ0hU1KjFNDQuJFezqKdrAyFdIevADiqrWHwSlbmBNMHp5ak2f40Pm8JTFyM2mqxkG6ngkHO11f/lg==}
     engines: {node: '>=8'}
@@ -651,11 +646,6 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.1.3
       es-abstract: 1.18.5
-    dev: true
-
-  /astral-regex/1.0.0:
-    resolution: {integrity: sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==}
-    engines: {node: '>=4'}
     dev: true
 
   /astral-regex/2.0.0:
@@ -814,7 +804,7 @@ packages:
     dev: true
 
   /cli-spinners/2.6.0:
-    resolution: {integrity: sha1-NsfcmPtqmna9YjjsP3fiQlYn6Tk=}
+    resolution: {integrity: sha512-t+4/y50K/+4xcCRosKkA7W4gTr1MySvLV0q+PxmG7FJ5g+66ChKurYjxBCjHggHH3HA5Hh9cy+lcUGWDqVH+4Q==}
     engines: {node: '>=6'}
     dev: true
 
@@ -1779,34 +1769,34 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: true
 
-  /ink-spinner/4.0.2_ink@3.0.8+react@16.14.0:
-    resolution: {integrity: sha1-7oejY1M/pJMpmOG9MD4KoYZXKwI=}
+  /ink-spinner/4.0.2_ink@3.0.9+react@16.14.0:
+    resolution: {integrity: sha512-vQGmhWUEh3IG1IxK1Hl2w6RfH6aaRIJWw9lrG8CvFFyrQ23UpJ8GClJs5/sFBxkNvsrrK9sKNEGlGnsqTYiUww==}
     engines: {node: '>=10'}
     peerDependencies:
       ink: '>=3.0.5'
       react: '>=16.8.2'
     dependencies:
       cli-spinners: 2.6.0
-      ink: 3.0.8_6271f60ef7a519b0e7b4db68b8cdff1f
+      ink: 3.0.9_6271f60ef7a519b0e7b4db68b8cdff1f
       react: 16.14.0
     dev: true
 
-  /ink-task-list/1.0.1_ink@3.0.8+react@16.14.0:
-    resolution: {integrity: sha1-UnGhpWHfLWVVqHY+hG28J74+ALs=}
+  /ink-task-list/1.1.0_ink@3.0.9+react@16.14.0:
+    resolution: {integrity: sha512-lywEGm1N6lV4r29BlJYdXzlVPXuUGqHmxJyK7OkSrIRS5ChVmiT1Ro8kUyfGSf9rQG0yKCQRhEaoHJDk22f8Nw==}
     peerDependencies:
       ink: '>=3.0.0'
       react: '>=16.8.0'
     dependencies:
       cli-spinners: 2.6.0
       figures: 3.2.0
-      ink: 3.0.8_6271f60ef7a519b0e7b4db68b8cdff1f
-      ink-spinner: 4.0.2_ink@3.0.8+react@16.14.0
+      ink: 3.0.9_6271f60ef7a519b0e7b4db68b8cdff1f
+      ink-spinner: 4.0.2_ink@3.0.9+react@16.14.0
       prop-types: 15.7.2
       react: 16.14.0
     dev: true
 
-  /ink/3.0.8_6271f60ef7a519b0e7b4db68b8cdff1f:
-    resolution: {integrity: sha512-ubMFylXYaG4IkXQVhPautbhV/p6Lo0GlvAMI/jh8cGJQ39yeznJbaTTJP2CqZXezA4GOHzalpwCWqux/NEY38w==}
+  /ink/3.0.9_6271f60ef7a519b0e7b4db68b8cdff1f:
+    resolution: {integrity: sha512-BN+SyJ1rLbKzGPxGYkk22dYB0b58OtyMI4uN0dYucQ8MlIu5TpXJzaP6Bt8Mgqi1dkNZT55bjGyZ2iVLTkJ70w==}
     engines: {node: '>=10'}
     peerDependencies:
       '@types/react': '>=16.8.0'
@@ -1818,7 +1808,7 @@ packages:
       '@types/react': 17.0.19
       ansi-escapes: 4.3.2
       auto-bind: 4.0.0
-      chalk: 4.1.1
+      chalk: 4.1.2
       cli-boxes: 2.2.1
       cli-cursor: 3.1.0
       cli-truncate: 2.1.0
@@ -1828,17 +1818,17 @@ packages:
       lodash: 4.17.21
       patch-console: 1.0.0
       react: 16.14.0
-      react-devtools-core: 4.13.0
+      react-devtools-core: 4.16.0
       react-reconciler: 0.24.0_react@16.14.0
       scheduler: 0.18.0
       signal-exit: 3.0.3
       slice-ansi: 3.0.0
       stack-utils: 2.0.3
-      string-length: 3.1.0
+      string-width: 4.2.2
       type-fest: 0.12.0
       widest-line: 3.1.0
       wrap-ansi: 6.2.0
-      ws: 7.4.5
+      ws: 7.5.3
       yoga-layout-prebuilt: 1.10.0
     transitivePeerDependencies:
       - bufferutil
@@ -2673,11 +2663,11 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-devtools-core/4.13.0:
-    resolution: {integrity: sha512-KR+0pLw8wTjOVr+9AECe5ctmycaAjbmxN3bbdB0vmlwm0JkxNnKMxDzanf+4V8IuPBQWgm8qdWpbSOqhu1l14g==}
+  /react-devtools-core/4.16.0:
+    resolution: {integrity: sha512-fqyVbp+wVVey6O4uVBk5s3J/vTiPludp7lulr6a8asTBm7DIA0vLBbjmAOLCnOlkWcgdy4mjsqOgNCbu8uICWw==}
     dependencies:
       shell-quote: 1.7.2
-      ws: 7.4.5
+      ws: 7.5.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2972,14 +2962,6 @@ packages:
     engines: {node: '>=0.6.19'}
     dev: true
 
-  /string-length/3.1.0:
-    resolution: {integrity: sha512-Ttp5YvkGm5v9Ijagtaz1BnN+k9ObpvS0eIBblPMp2YWL8FBmi9qblQ9fexc2k/CXFgrTIteU3jAw3payCnwSTA==}
-    engines: {node: '>=8'}
-    dependencies:
-      astral-regex: 1.0.0
-      strip-ansi: 5.2.0
-    dev: true
-
   /string-width/4.2.2:
     resolution: {integrity: sha512-XBJbT3N4JhVumXE0eoLU9DCjcaF92KLNqTmFCnG1pf8duUxFGwtP6AD6nkjw9a3IdiRtL3E2w3JDiE/xi3vOeA==}
     engines: {node: '>=8'}
@@ -3010,13 +2992,6 @@ packages:
       get-own-enumerable-property-symbols: 3.0.2
       is-obj: 1.0.1
       is-regexp: 1.0.0
-    dev: true
-
-  /strip-ansi/5.2.0:
-    resolution: {integrity: sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==}
-    engines: {node: '>=6'}
-    dependencies:
-      ansi-regex: 4.1.0
     dev: true
 
   /strip-ansi/6.0.0:
@@ -3326,19 +3301,6 @@ packages:
 
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
-    dev: true
-
-  /ws/7.4.5:
-    resolution: {integrity: sha512-xzyu3hFvomRfXKH8vOFMU3OguG6oOvhXMo3xsGy3xWExqaM2dxBbVxuD99O7m3ZUFMvvscsZDqxfgMaRr/Nr1g==}
-    engines: {node: '>=8.3.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: ^5.0.2
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
     dev: true
 
   /ws/7.5.3:
