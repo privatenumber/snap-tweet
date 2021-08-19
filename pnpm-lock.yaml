@@ -19,7 +19,7 @@ specifiers:
   tempy: ^1.0.1
   tsup: ^4.14.0
   typescript: ^4.3.5
-  unused-filename: ^2.1.0
+  unused-filename: ^3.0.0
   yoga-layout-prebuilt: 1.10.0
 
 dependencies:
@@ -44,7 +44,7 @@ devDependencies:
   tempy: 1.0.1
   tsup: 4.14.0_typescript@4.3.5
   typescript: 4.3.5
-  unused-filename: 2.1.0
+  unused-filename: 3.0.0
 
 packages:
 
@@ -2290,11 +2290,6 @@ packages:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
 
-  /modify-filename/1.1.0:
-    resolution: {integrity: sha1-mi3sg4Bvuy2XXyK+7IWcoms5OqE=}
-    engines: {node: '>=0.10.0'}
-    dev: true
-
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
     dev: true
@@ -3221,11 +3216,11 @@ packages:
       crypto-random-string: 2.0.0
     dev: true
 
-  /unused-filename/2.1.0:
-    resolution: {integrity: sha512-BMiNwJbuWmqCpAM1FqxCTD7lXF97AvfQC8Kr/DIeA6VtvhJaMDupZ82+inbjl5yVP44PcxOuCSxye1QMS0wZyg==}
-    engines: {node: '>=8'}
+  /unused-filename/3.0.0:
+    resolution: {integrity: sha512-YJbSon9TiwV/80zn0iy3V3DAJL62GQgUTNexjfZS40D7N7BADhpkUCdfMS4d2VK5YT9WyEsDJVpTTTiMrdB50g==}
+    engines: {node: '>=12'}
     dependencies:
-      modify-filename: 1.1.0
+      escape-string-regexp: 4.0.0
       path-exists: 4.0.0
     dev: true
 
