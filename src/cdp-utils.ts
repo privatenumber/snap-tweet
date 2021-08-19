@@ -39,7 +39,7 @@ export const querySelector = async (
 			throw new Error('Not found');
 		}
 
-		return nodeId;
+		return nodeId as number;
 	},
 	{
 		retries: 3,
@@ -47,17 +47,24 @@ export const querySelector = async (
 	},
 );
 
+export const xpath = async (
+	DOM,
+	query: string,
+) => {
+	const { searchId, resultCount } = await DOM.performSearch({ query });
+	const { nodeIds } = await DOM.getSearchResults({
+		searchId,
+		fromIndex: 0,
+		toIndex: resultCount,
+	});
+
+	return nodeIds as number[];
+};
+
 export const hideNode = async (
 	DOM,
-	queryNodeId: number,
-	selector: string,
+	nodeId: number,
 ) => {
-	const nodeId = await querySelector(
-		DOM,
-		queryNodeId,
-		selector,
-	);
-
 	await DOM.setAttributeValue({
 		nodeId,
 		name: 'style',
