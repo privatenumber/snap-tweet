@@ -13,8 +13,8 @@ specifiers:
   ink: ^3.0.9
   ink-task-list: ^1.1.0
   lint-staged: ^11.1.2
-  open: ^8.0.7
-  p-retry: ^4.5.0
+  open: ^8.2.1
+  p-retry: ^4.6.1
   react: ^16.8.0
   tempy: ^1.0.1
   tsup: ^4.14.0
@@ -38,8 +38,8 @@ devDependencies:
   ink: 3.0.9_6271f60ef7a519b0e7b4db68b8cdff1f
   ink-task-list: 1.1.0_ink@3.0.9+react@16.14.0
   lint-staged: 11.1.2
-  open: 8.0.7
-  p-retry: 4.5.0
+  open: 8.2.1
+  p-retry: 4.6.1
   react: 16.14.0
   tempy: 1.0.1
   tsup: 4.14.0_typescript@4.3.5
@@ -418,8 +418,8 @@ packages:
       csstype: 3.0.8
     dev: true
 
-  /@types/retry/0.12.0:
-    resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
+  /@types/retry/0.12.1:
+    resolution: {integrity: sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==}
     dev: true
 
   /@types/scheduler/0.16.2:
@@ -2404,8 +2404,8 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /open/8.0.7:
-    resolution: {integrity: sha512-qoyG0kpdaWVoL5MiwTRQWujSdivwBOgfLadVEdpsZNHOK1+kBvmVtLYdgWr8G4cgBpG9zaxezn6jz6PPdQW5xg==}
+  /open/8.2.1:
+    resolution: {integrity: sha512-rXILpcQlkF/QuFez2BJDf3GsqpjGKbkUUToAIGo9A0Q6ZkoSGogZJulrUdwRkrAsoQvoZsrjCYt8+zblOk7JQQ==}
     engines: {node: '>=12'}
     dependencies:
       define-lazy-prop: 2.0.0
@@ -2479,12 +2479,12 @@ packages:
       aggregate-error: 3.1.0
     dev: true
 
-  /p-retry/4.5.0:
-    resolution: {integrity: sha512-5Hwh4aVQSu6BEP+w2zKlVXtFAaYQe1qWuVADSgoeVlLjwe/Q/AMSoRR4MDeaAfu8llT+YNbEijWu/YF3m6avkg==}
+  /p-retry/4.6.1:
+    resolution: {integrity: sha512-e2xXGNhZOZ0lfgR9kL34iGlU8N/KO0xZnQxVEwdeOvpqNDQfdnxIYizvWtK8RglUa3bGqI8g0R/BdfzLMxRkiA==}
     engines: {node: '>=8'}
     dependencies:
-      '@types/retry': 0.12.0
-      retry: 0.12.0
+      '@types/retry': 0.12.1
+      retry: 0.13.1
     dev: true
 
   /p-try/1.0.0:
@@ -2786,8 +2786,8 @@ packages:
       signal-exit: 3.0.3
     dev: true
 
-  /retry/0.12.0:
-    resolution: {integrity: sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=}
+  /retry/0.13.1:
+    resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
     engines: {node: '>= 4'}
     dev: true
 
