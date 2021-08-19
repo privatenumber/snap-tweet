@@ -4,6 +4,7 @@ import CDP from 'chrome-remote-interface';
 import exitHook from 'exit-hook';
 import {
 	querySelector,
+	xpath,
 	waitForNetworkIdle,
 	hideNode,
 	screenshotNode,
@@ -156,12 +157,16 @@ class TweetCamera {
 		const { root } = await client.DOM.getDocument();
 		const tweetContainerNodeId = await querySelector(client.DOM, root.nodeId, '#app > div > div > div:last-child');
 
+		const [tweetLinkNodeId] = await xpath(client.DOM, '//a[starts-with(@href, "https://twitter.com/intent/tweet")]/..');
+
 		await Promise.all([
 			// Share tweet button - can't use aria-label because of i18n
-			hideNode(client.DOM, tweetContainerNodeId, '[role="button"][aria-label]'),
+			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, '[role="button"][aria-label]')),
 
 			// Info button - can't use aria-label because of i18n
-			hideNode(client.DOM, tweetContainerNodeId, 'a[href$="twitter-for-websites-ads-info-and-privacy"]'),
+			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, 'a[href$="twitter-for-websites-ads-info-and-privacy"]')),
+
+			client.DOM.removeNode({ nodeId: tweetLinkNodeId }),
 
 			// Unset max-width to fill window width
 			client.DOM.setAttributeValue({
