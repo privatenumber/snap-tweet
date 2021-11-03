@@ -1,3 +1,4 @@
+// eslint-disable-line unicorn/filename-case
 import React, { ComponentProps, useReducer, FC } from 'react';
 import { render } from 'ink';
 import { TaskList, Task } from 'ink-task-list';

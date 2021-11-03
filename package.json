@@ -39,7 +39,7 @@
 		"yoga-layout-prebuilt": "1.10.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config-typescript": "^0.1.22",
+		"@pvtnbr/eslint-config": "^0.4.1",
 		"@types/react": "^17.0.34",
 		"cac": "^6.7.11",
 		"chrome-launcher": "^0.13.4",
@@ -60,6 +60,6 @@
 		"unused-filename": "^2.1.0"
 	},
 	"eslintConfig": {
-		"extends": "@pvtnbr/eslint-config-typescript"
+		"extends": "@pvtnbr"
 	}
 }
