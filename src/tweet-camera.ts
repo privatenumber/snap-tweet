@@ -160,8 +160,8 @@ class TweetCamera {
 		const [tweetLinkNodeId] = await xpath(client.DOM, '//a[starts-with(@href, "https://twitter.com/intent/tweet")]/..');
 
 		await Promise.all([
-			// Share tweet button - can't use aria-label because of i18n
-			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, '[role="button"][aria-label]')),
+			// "Copy link to Tweet" button
+			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]')),
 
 			// Info button - can't use aria-label because of i18n
 			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, 'a[href$="twitter-for-websites-ads-info-and-privacy"]')),

@@ -36,7 +36,7 @@ export const querySelector = async (
 		});
 
 		if (nodeId === 0) {
-			throw new Error('Not found');
+			throw new Error(`Selector "${selector}" not found`);
 		}
 
 		return nodeId as number;
