@@ -15,7 +15,7 @@ specifiers:
   lint-staged: ^11.2.6
   open: ^8.4.0
   p-retry: ^4.6.1
-  react: ^16.8.0
+  react: ^17.0.2
   tempy: ^1.0.1
   tsup: ^4.14.0
   typescript: ^4.4.4
@@ -35,12 +35,12 @@ devDependencies:
   esno: 0.9.1
   exit-hook: 2.2.1
   husky: 4.3.8
-  ink: 3.2.0_188fd1a8345b1e2219a114e1bfdc440c
-  ink-task-list: 1.1.0_ink@3.2.0+react@16.14.0
+  ink: 3.2.0_27d7f75f5fffc1228c129be468caca5c
+  ink-task-list: 1.1.0_ink@3.2.0+react@17.0.2
   lint-staged: 11.2.6
   open: 8.4.0
   p-retry: 4.6.1
-  react: 16.14.0
+  react: 17.0.2
   tempy: 1.0.1
   tsup: 4.14.0_typescript@4.4.4
   typescript: 4.4.4
@@ -1894,7 +1894,7 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: true
 
-  /ink-spinner/4.0.2_ink@3.2.0+react@16.14.0:
+  /ink-spinner/4.0.2_ink@3.2.0+react@17.0.2:
     resolution: {integrity: sha1-7oejY1M/pJMpmOG9MD4KoYZXKwI=}
     engines: {node: '>=10'}
     peerDependencies:
@@ -1902,11 +1902,11 @@ packages:
       react: '>=16.8.2'
     dependencies:
       cli-spinners: 2.6.0
-      ink: 3.2.0_188fd1a8345b1e2219a114e1bfdc440c
-      react: 16.14.0
+      ink: 3.2.0_27d7f75f5fffc1228c129be468caca5c
+      react: 17.0.2
     dev: true
 
-  /ink-task-list/1.1.0_ink@3.2.0+react@16.14.0:
+  /ink-task-list/1.1.0_ink@3.2.0+react@17.0.2:
     resolution: {integrity: sha512-lywEGm1N6lV4r29BlJYdXzlVPXuUGqHmxJyK7OkSrIRS5ChVmiT1Ro8kUyfGSf9rQG0yKCQRhEaoHJDk22f8Nw==}
     peerDependencies:
       ink: '>=3.0.0'
@@ -1914,13 +1914,13 @@ packages:
     dependencies:
       cli-spinners: 2.6.0
       figures: 3.2.0
-      ink: 3.2.0_188fd1a8345b1e2219a114e1bfdc440c
-      ink-spinner: 4.0.2_ink@3.2.0+react@16.14.0
+      ink: 3.2.0_27d7f75f5fffc1228c129be468caca5c
+      ink-spinner: 4.0.2_ink@3.2.0+react@17.0.2
       prop-types: 15.7.2
-      react: 16.14.0
+      react: 17.0.2
     dev: true
 
-  /ink/3.2.0_188fd1a8345b1e2219a114e1bfdc440c:
+  /ink/3.2.0_27d7f75f5fffc1228c129be468caca5c:
     resolution: {integrity: sha512-firNp1q3xxTzoItj/eOOSZQnYSlyrWks5llCTVX37nJ59K3eXbQ8PtzCguqo8YI19EELo5QxaKnJd4VxzhU8tg==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -1942,9 +1942,9 @@ packages:
       is-ci: 2.0.0
       lodash: 4.17.21
       patch-console: 1.0.0
-      react: 16.14.0
+      react: 17.0.2
       react-devtools-core: 4.21.0
-      react-reconciler: 0.26.2_react@16.14.0
+      react-reconciler: 0.26.2_react@17.0.2
       scheduler: 0.20.2
       signal-exit: 3.0.3
       slice-ansi: 3.0.0
@@ -2815,7 +2815,7 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /react-reconciler/0.26.2_react@16.14.0:
+  /react-reconciler/0.26.2_react@17.0.2:
     resolution: {integrity: sha512-nK6kgY28HwrMNwDnMui3dvm3rCFjZrcGiuwLc5COUipBK5hWHLOxMJhSnSomirqWwjPBJKV1QcbkI0VJr7Gl1Q==}
     engines: {node: '>=0.10.0'}
     peerDependencies:
@@ -2823,17 +2823,16 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react: 16.14.0
+      react: 17.0.2
       scheduler: 0.20.2
     dev: true
 
-  /react/16.14.0:
-    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+  /react/17.0.2:
+    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      prop-types: 15.7.2
     dev: true
 
   /read-pkg-up/7.0.1:
