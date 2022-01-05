@@ -6,7 +6,7 @@ specifiers:
   cac: ^6.7.11
   chrome-launcher: ^0.14.2
   chrome-remote-interface: ^0.31.0
-  cleye: github:privatenumber/cleye#b3d203f
+  cleye: ^1.0.1
   eslint: ^7.32.0
   esno: ^0.9.1
   exit-hook: ^2.2.1
@@ -24,7 +24,7 @@ specifiers:
   yoga-layout-prebuilt: 1.10.0
 
 dependencies:
-  cleye: github.com/privatenumber/cleye/b3d203f
+  cleye: 1.0.1
   yoga-layout-prebuilt: 1.10.0
 
 devDependencies:
@@ -811,6 +811,13 @@ packages:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
     dev: true
+
+  /cleye/1.0.1:
+    resolution: {integrity: sha512-MackVW9Cwdy7n7h1R7522q8ofJZqXtdnmD1K7a4RbCUZ8KuM3RUkgcO3ooLZqQWff0eXpoTHbf5pU1Iwhx73EQ==}
+    dependencies:
+      terminal-columns: 1.4.0
+      type-flag: 2.0.0
+    dev: false
 
   /cli-boxes/2.2.1:
     resolution: {integrity: sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==}
@@ -3273,8 +3280,8 @@ packages:
       unique-string: 2.0.0
     dev: true
 
-  /terminal-columns/1.0.0:
-    resolution: {integrity: sha512-e446DfI4bvyNkJffnjx7583wMny0f2YFbenrNi6SZgK4xiPO6+eY6J6W4ugsh9OPkHcl13y0vpEQvTmaKK26Qw==}
+  /terminal-columns/1.4.0:
+    resolution: {integrity: sha512-Oh62O26xgOUjakUlGfjAEdgZmipNsqHPmvs8QQ8j6WH3c5iXhshCjr6yB6bW7CYXG5POoUrHLLLcKdRvv8LBZg==}
     dev: false
 
   /text-table/0.2.0:
@@ -3568,12 +3575,3 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@types/yoga-layout': 1.9.2
-
-  github.com/privatenumber/cleye/b3d203f:
-    resolution: {commit: b3d203f, repo: git+ssh://git@github.com/privatenumber/cleye.git, type: git}
-    name: cleye
-    version: 1.0.0
-    dependencies:
-      terminal-columns: 1.0.0
-      type-flag: 2.0.0
-    dev: false

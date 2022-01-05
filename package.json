@@ -36,7 +36,7 @@
 		"*.{js,ts}": "eslint"
 	},
 	"dependencies": {
-		"cleye": "github:privatenumber/cleye#b3d203f",
+		"cleye": "^1.0.1",
 		"yoga-layout-prebuilt": "1.10.0"
 	},
 	"devDependencies": {

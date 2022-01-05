@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import cac from 'cac';
 import unusedFilename from 'unused-filename';
 import tempy from 'tempy';
 import open from 'open';
@@ -11,12 +10,12 @@ import TweetCamera from './tweet-camera';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require('../package.json');
 
-const app = cli({
+const argv = cli({
 	name: 'snap-tweet',
 
 	version,
 
-	arguments: ['<...tweet-urls>'],
+	parameters: ['<tweet urls...>'],
 
 	flags: {
 		outputDir: {
@@ -50,19 +49,23 @@ const app = cli({
 		},
 	},
 
-	// Specifying this enables `-h, --help`
 	help: {
 		examples: [
-			'$ snap-tweet https://twitter.com/jack/status/20',
-			'$ snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja',
-			'$ snap-tweet https://twitter.com/Interior/status/463440424141459456 --width 900 --dark-mode',
+			'# Snapshot a tweet',
+			'snap-tweet https://twitter.com/jack/status/20',
+			'',
+			'# Snapshot a tweet with Japanese locale',
+			'snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja',
+			'',
+			'# Snapshot a tweet with dark mode and 900px width',
+			'snap-tweet https://twitter.com/Interior/status/463440424141459456 --width 900 --dark-mode',
 		],
 	},
 });
 
 (async () => {
-	const options = app.flags;
-	const tweets = app._.tweetUrls
+	const options = argv.flags;
+	const tweets = argv._.tweetUrls
 		.map(
 			tweetUrl => ({
 				...TweetCamera.parseTweetUrl(tweetUrl),
