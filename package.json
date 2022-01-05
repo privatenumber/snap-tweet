@@ -41,9 +41,9 @@
 	"devDependencies": {
 		"@pvtnbr/eslint-config": "^0.4.1",
 		"@types/react": "^17.0.34",
-		"cac": "^6.7.11",
 		"chrome-launcher": "^0.14.2",
 		"chrome-remote-interface": "^0.31.0",
+		"cleye": "^1.0.1",
 		"eslint": "^7.32.0",
 		"esno": "^0.9.1",
 		"exit-hook": "^2.2.1",
