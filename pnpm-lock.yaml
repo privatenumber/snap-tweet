@@ -3,7 +3,6 @@ lockfileVersion: 5.3
 specifiers:
   '@pvtnbr/eslint-config': ^0.4.1
   '@types/react': ^17.0.34
-  cac: ^6.7.11
   chrome-launcher: ^0.14.2
   chrome-remote-interface: ^0.31.0
   cleye: ^1.0.1
@@ -24,15 +23,14 @@ specifiers:
   yoga-layout-prebuilt: 1.10.0
 
 dependencies:
-  cleye: 1.0.1
   yoga-layout-prebuilt: 1.10.0
 
 devDependencies:
   '@pvtnbr/eslint-config': 0.4.1_eslint@7.32.0+typescript@4.4.4
   '@types/react': 17.0.34
-  cac: 6.7.11
   chrome-launcher: 0.14.2
   chrome-remote-interface: 0.31.0
+  cleye: 1.0.1
   eslint: 7.32.0
   esno: 0.9.1
   exit-hook: 2.2.1
@@ -817,7 +815,7 @@ packages:
     dependencies:
       terminal-columns: 1.4.0
       type-flag: 2.0.0
-    dev: false
+    dev: true
 
   /cli-boxes/2.2.1:
     resolution: {integrity: sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==}
@@ -3282,7 +3280,7 @@ packages:
 
   /terminal-columns/1.4.0:
     resolution: {integrity: sha512-Oh62O26xgOUjakUlGfjAEdgZmipNsqHPmvs8QQ8j6WH3c5iXhshCjr6yB6bW7CYXG5POoUrHLLLcKdRvv8LBZg==}
-    dev: false
+    dev: true
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
@@ -3420,7 +3418,7 @@ packages:
 
   /type-flag/2.0.0:
     resolution: {integrity: sha512-L0jgov26xVtNM23pL0Roh45Is/l8aIA6YyI9U8x8L8tcw2t+nwZHYzjBVB8CIJ2PFe3qb5hJSDynUmKP1GcHtw==}
-    dev: false
+    dev: true
 
   /typescript/4.4.4:
     resolution: {integrity: sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==}
