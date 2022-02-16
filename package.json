@@ -39,12 +39,12 @@
 		"yoga-layout-prebuilt": "1.10.0"
 	},
 	"devDependencies": {
-		"@pvtnbr/eslint-config": "^0.4.1",
+		"@pvtnbr/eslint-config": "^0.13.2",
 		"@types/react": "^17.0.39",
 		"chrome-launcher": "^0.14.2",
 		"chrome-remote-interface": "^0.31.0",
 		"cleye": "^1.0.1",
-		"eslint": "^7.32.0",
+		"eslint": "^8.9.0",
 		"esno": "^0.9.1",
 		"exit-hook": "^2.2.1",
 		"husky": "^4.3.8",
