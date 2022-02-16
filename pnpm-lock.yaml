@@ -5,7 +5,7 @@ specifiers:
   '@types/react': ^17.0.39
   chrome-launcher: ^0.15.0
   chrome-remote-interface: ^0.31.2
-  cleye: ^1.0.1
+  cleye: ^1.1.0
   eslint: ^8.9.0
   esno: ^0.14.1
   exit-hook: ^2.2.1
@@ -30,7 +30,7 @@ devDependencies:
   '@types/react': 17.0.39
   chrome-launcher: 0.15.0
   chrome-remote-interface: 0.31.2
-  cleye: 1.0.1
+  cleye: 1.1.0
   eslint: 8.9.0
   esno: 0.14.1
   exit-hook: 2.2.1
@@ -884,11 +884,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /cleye/1.0.1:
-    resolution: {integrity: sha512-MackVW9Cwdy7n7h1R7522q8ofJZqXtdnmD1K7a4RbCUZ8KuM3RUkgcO3ooLZqQWff0eXpoTHbf5pU1Iwhx73EQ==}
+  /cleye/1.1.0:
+    resolution: {integrity: sha512-pEKYkgy1wigX3v1tdQN0KAl1XSrjcyfJJuhQorH8F3J7euQPx5nkkdZj8dxRb7+AFI24XagsiA61RBHkQCE48g==}
     dependencies:
-      terminal-columns: 1.4.0
-      type-flag: 2.0.0
+      terminal-columns: 1.4.1
+      type-flag: 2.1.0
     dev: true
 
   /cli-boxes/2.2.1:
@@ -3579,8 +3579,8 @@ packages:
       unique-string: 2.0.0
     dev: true
 
-  /terminal-columns/1.4.0:
-    resolution: {integrity: sha512-Oh62O26xgOUjakUlGfjAEdgZmipNsqHPmvs8QQ8j6WH3c5iXhshCjr6yB6bW7CYXG5POoUrHLLLcKdRvv8LBZg==}
+  /terminal-columns/1.4.1:
+    resolution: {integrity: sha512-IKVL/itiMy947XWVv4IHV7a0KQXvKjj4ptbi7Ew9MPMcOLzkiQeyx3Gyvh62hKrfJ0RZc4M1nbhzjNM39Kyujw==}
     dev: true
 
   /text-table/0.2.0:
@@ -3718,8 +3718,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-flag/2.0.0:
-    resolution: {integrity: sha512-L0jgov26xVtNM23pL0Roh45Is/l8aIA6YyI9U8x8L8tcw2t+nwZHYzjBVB8CIJ2PFe3qb5hJSDynUmKP1GcHtw==}
+  /type-flag/2.1.0:
+    resolution: {integrity: sha512-ln8u/BdNzppXeFP8JsmsofElwVC2/FYoQAIipzhx45jjFwSApFqIieBEY93TKoLpphQBAbazX8LCoIY59Vwxlg==}
     dev: true
 
   /typescript/4.5.5:

@@ -43,7 +43,7 @@
 		"@types/react": "^17.0.39",
 		"chrome-launcher": "^0.15.0",
 		"chrome-remote-interface": "^0.31.2",
-		"cleye": "^1.0.1",
+		"cleye": "^1.1.0",
 		"eslint": "^8.9.0",
 		"esno": "^0.14.1",
 		"exit-hook": "^2.2.1",
