@@ -40,7 +40,7 @@
 	},
 	"devDependencies": {
 		"@pvtnbr/eslint-config": "^0.4.1",
-		"@types/react": "^17.0.34",
+		"@types/react": "^17.0.39",
 		"chrome-launcher": "^0.14.2",
 		"chrome-remote-interface": "^0.31.0",
 		"cleye": "^1.0.1",
@@ -55,8 +55,8 @@
 		"p-retry": "^4.6.1",
 		"react": "^17.0.2",
 		"tempy": "^1.0.1",
-		"tsup": "^4.14.0",
-		"typescript": "^4.4.4",
+		"tsup": "^5.11.13",
+		"typescript": "^4.5.5",
 		"unused-filename": "^2.1.0"
 	},
 	"eslintConfig": {
