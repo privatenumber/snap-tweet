@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import unusedFilename from 'unused-filename';
+import { unusedFilename } from 'unused-filename';
 import tempy from 'tempy';
 import open from 'open';
 import { cli } from 'cleye';
