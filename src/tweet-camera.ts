@@ -4,7 +4,6 @@ import CDP from 'chrome-remote-interface';
 import exitHook from 'exit-hook';
 import {
 	querySelector,
-	xpath,
 	waitForNetworkIdle,
 	hideNode,
 	screenshotNode,
@@ -157,16 +156,31 @@ class TweetCamera {
 		const { root } = await client.DOM.getDocument();
 		const tweetContainerNodeId = await querySelector(client.DOM, root.nodeId, '#app > div > div > div:last-child');
 
-		const [tweetLinkNodeId] = await xpath(client.DOM, '//a[starts-with(@href, "https://twitter.com/intent/tweet")]/..');
-
 		await Promise.all([
 			// "Copy link to Tweet" button
-			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]')),
+			hideNode(
+				client.DOM,
+				await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]'),
+			),
 
 			// Info button - can't use aria-label because of i18n
-			hideNode(client.DOM, await querySelector(client.DOM, tweetContainerNodeId, 'a[href$="twitter-for-websites-ads-info-and-privacy"]')),
+			hideNode(
+				client.DOM,
+				await querySelector(
+					client.DOM,
+					tweetContainerNodeId,
+					'a[href$="twitter-for-websites-ads-info-and-privacy"]',
+				),
+			),
 
-			client.DOM.removeNode({ nodeId: tweetLinkNodeId }),
+			// Remove the "Read 10K replies" button
+			client.DOM.removeNode({
+				nodeId: await querySelector(
+					client.DOM,
+					tweetContainerNodeId,
+					'.css-1dbjc4n.r-kzbkwu.r-1h8ys4a',
+				),
+			}),
 
 			// Unset max-width to fill window width
 			client.DOM.setAttributeValue({

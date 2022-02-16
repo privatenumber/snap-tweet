@@ -1,55 +1,71 @@
 import fs from 'fs';
 import path from 'path';
-import cac from 'cac';
-import unusedFilename from 'unused-filename';
+import { unusedFilename } from 'unused-filename';
 import tempy from 'tempy';
 import open from 'open';
+import { cli } from 'cleye';
 import renderTaskRunner from './render-task-runner';
 import TweetCamera from './tweet-camera';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require('../package.json');
 
-const cli = cac('snap-tweet')
-	.usage('<...tweet urls>')
-	.option(
-		'-o, --output-dir <path>',
-		'Tweet screenshot output directory',
-	)
-	.option(
-		'-w, --width <width>',
-		'Width of tweet',
-		{
+const argv = cli({
+	name: 'snap-tweet',
+
+	version,
+
+	parameters: ['<tweet urls...>'],
+
+	flags: {
+		outputDir: {
+			type: String,
+			alias: 'o',
+			description: 'Tweet screenshot output directory',
+			placeholder: '<path>',
+		},
+		width: {
+			type: Number,
+			alias: 'w',
+			description: 'Width of tweet',
 			default: 550,
+			placeholder: '<width>',
 		},
-	)
-	.option(
-		'-t, --show-thread',
-		'Show tweet thread',
-	)
-	.option(
-		'-d, --dark-mode',
-		'Show tweet in dark mode',
-	)
-	.option(
-		'-l, --locale <locale>',
-		'Locale',
-		{
+		showThread: {
+			type: Boolean,
+			alias: 't',
+			description: 'Show tweet thread',
+		},
+		darkMode: {
+			type: Boolean,
+			alias: 'd',
+			description: 'Show tweet in dark mode',
+		},
+		locale: {
+			type: String,
+			description: 'Locale',
 			default: 'en',
+			placeholder: '<locale>',
 		},
-	)
-	.help()
-	.version(version)
-	.example('$ snap-tweet https://twitter.com/jack/status/20')
-	.example('$ snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja')
-	.example('$ snap-tweet https://twitter.com/Interior/status/463440424141459456 --width 900 --dark-mode');
+	},
 
-(async ({ args, options }) => {
-	if (options.help || options.version) {
-		process.exit(0);
-	}
+	help: {
+		examples: [
+			'# Snapshot a tweet',
+			'snap-tweet https://twitter.com/jack/status/20',
+			'',
+			'# Snapshot a tweet with Japanese locale',
+			'snap-tweet https://twitter.com/TwitterJP/status/578707432 --locale ja',
+			'',
+			'# Snapshot a tweet with dark mode and 900px width',
+			'snap-tweet https://twitter.com/Interior/status/463440424141459456 --width 900 --dark-mode',
+		],
+	},
+});
 
-	const tweets = args
+(async () => {
+	const options = argv.flags;
+	const tweets = argv._.tweetUrls
 		.map(
 			tweetUrl => ({
 				...TweetCamera.parseTweetUrl(tweetUrl),
@@ -63,11 +79,6 @@ const cli = cac('snap-tweet')
 				return index === index2;
 			},
 		);
-
-	if (tweets.length === 0) {
-		cli.outputHelp();
-		process.exit(0);
-	}
 
 	const tweetCamera = new TweetCamera();
 	const startTask = renderTaskRunner();
@@ -108,7 +119,7 @@ const cli = cac('snap-tweet')
 	}));
 
 	await tweetCamera.close();
-})(cli.parse()).catch((error) => {
+})().catch((error) => {
 	if (error.code === 'ERR_LAUNCHER_NOT_INSTALLED') {
 		console.log(
 			'[snap-tweet] Error: Chrome could not be automatically found! Manually pass in the Chrome binary path with the CHROME_PATH environment variable: CHROME_PATH=/path/to/chrome npx snap-tweet ...',
