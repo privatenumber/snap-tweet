@@ -27,14 +27,6 @@
 		"dev": "tsx src/cli.ts",
 		"lint": "eslint ."
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "npm run build && lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,ts}": "eslint"
-	},
 	"dependencies": {
 		"yoga-layout-prebuilt": "1.10.0"
 	},
@@ -46,10 +38,8 @@
 		"cleye": "^1.1.0",
 		"eslint": "^8.9.0",
 		"exit-hook": "^3.0.0",
-		"husky": "^4.3.8",
 		"ink": "^3.2.0",
 		"ink-task-list": "^1.1.0",
-		"lint-staged": "^12.3.4",
 		"open": "^8.4.0",
 		"p-retry": "^5.0.0",
 		"react": "^17.0.2",
