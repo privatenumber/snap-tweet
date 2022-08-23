@@ -157,21 +157,11 @@ class TweetCamera {
 		const tweetContainerNodeId = await querySelector(client.DOM, root.nodeId, '#app > div > div > div:last-child');
 
 		// "Copy link to Tweet" button
-		const hideCopyLinkButton = querySelector(client.DOM, tweetContainerNodeId, '[role="button"]')
-			.then(d => hideNode(
-				client.DOM,
-				d,
-			)).catch((error) => {
-				if (String(error) === 'Error: Selector "[role="button"]" not found') {
-					// ignore
-					return;
-				}
-				throw error;
-			});
+		const hideCopyLinkButtonNodeId = await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]').catch(() => null);
 
 		await Promise.all([
 			// "Copy link to Tweet" button
-			hideCopyLinkButton,
+			(hideCopyLinkButtonNodeId && hideNode(client.DOM, hideCopyLinkButtonNodeId)),
 
 			// Info button - can't use aria-label because of i18n
 			hideNode(
