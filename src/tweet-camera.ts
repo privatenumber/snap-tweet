@@ -156,12 +156,12 @@ class TweetCamera {
 		const { root } = await client.DOM.getDocument();
 		const tweetContainerNodeId = await querySelector(client.DOM, root.nodeId, '#app > div > div > div:last-child');
 
+		// "Copy link to Tweet" button
+		const hideCopyLinkButtonNodeId = await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]').catch(() => null);
+
 		await Promise.all([
 			// "Copy link to Tweet" button
-			hideNode(
-				client.DOM,
-				await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]'),
-			),
+			(hideCopyLinkButtonNodeId && hideNode(client.DOM, hideCopyLinkButtonNodeId)),
 
 			// Info button - can't use aria-label because of i18n
 			hideNode(
