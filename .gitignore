@@ -24,3 +24,6 @@ node_modules/
 
 # Distribution
 dist
+
+# Cache
+undefined

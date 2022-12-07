@@ -14,6 +14,10 @@ interface Options {
 	darkMode?: boolean;
 	showThread?: boolean;
 	locale?: string;
+	fillLikeButton?: boolean;
+	fillCommentButton?: boolean;
+	showComments?: boolean;
+	outputFilename?: string;
 }
 
 const getEmbeddableTweetUrl = (tweetId: string, options: Options) => {
@@ -110,6 +114,10 @@ class TweetCamera {
 		tweetId: string,
 		options: Options = {},
 	) {
+		if(options.outputFilename){
+			return options.outputFilename;
+		}
+
 		const nameComponents = [username, tweetId];
 
 		if (options.width !== 550) {
@@ -128,8 +136,56 @@ class TweetCamera {
 			nameComponents.push(options.locale);
 		}
 
-		return `${nameComponents.join('-')}.png`;
+		return `snap-tweet-${nameComponents.join('-')}.png`;
 	}
+
+	static async removeComments(client: any, tweetContainerNodeId: number, options: Options) {
+		if(!options.showComments){
+			// Remove the "Read 10K replies" button
+			client.DOM.removeNode({
+				nodeId: await querySelector(
+					client.DOM,
+					tweetContainerNodeId,
+					'.css-1dbjc4n.r-kzbkwu.r-1h8ys4a',
+				),
+			})			
+		}
+	}
+
+	static fillSvgCSS(darkMode : boolean){
+		return `fill: none; stroke: ${darkMode ? "rgb(247, 249, 249)" : "rgb(0, 0, 0)" }; stroke-width: 2px; stroke-linejoin: round;`;
+	}
+
+	static async fillLikeButton(client: any, tweetContainerNodeId: number, options: Options) {
+		if(!options.fillLikeButton){
+			// change the like button to unfilled
+			client.DOM.setAttributeValue({
+				nodeId: await querySelector(
+					client.DOM,
+					tweetContainerNodeId,
+					'svg[class$="r-vkub15 r-4qtqp9 r-1sreavd r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"]',	
+				),
+				name: 'style',
+				value: TweetCamera.fillSvgCSS(options.darkMode),
+			});
+		}
+	}
+	
+	static async fillCommentButton(client: any, tweetContainerNodeId: number, options: Options) {
+		if(!options.fillCommentButton){
+			// change the comment button to unfilled
+			client.DOM.setAttributeValue({
+				nodeId: await querySelector(
+					client.DOM,
+					tweetContainerNodeId,
+					'svg[class$="r-1cvl2hr r-4qtqp9 r-4r3dic r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"]',
+				),
+				name: 'style',
+				value: TweetCamera.fillSvgCSS(options.darkMode),
+			});
+		}
+	}
+
 
 	async snapTweet(
 		tweetId: string,
@@ -174,13 +230,14 @@ class TweetCamera {
 			),
 
 			// Remove the "Read 10K replies" button
-			client.DOM.removeNode({
-				nodeId: await querySelector(
-					client.DOM,
-					tweetContainerNodeId,
-					'.css-1dbjc4n.r-kzbkwu.r-1h8ys4a',
-				),
-			}),
+			TweetCamera.removeComments(client, tweetContainerNodeId, options),
+			
+			// Unfill the like button
+			TweetCamera.fillLikeButton(client, tweetContainerNodeId, options),
+
+			// Unfill the comment button
+			TweetCamera.fillCommentButton(client, tweetContainerNodeId, options),
+
 
 			// Unset max-width to fill window width
 			client.DOM.setAttributeValue({

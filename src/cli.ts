@@ -24,6 +24,11 @@ const argv = cli({
 			description: 'Tweet screenshot output directory',
 			placeholder: '<path>',
 		},
+		outputFilename: {
+			type: String,
+			alias: 'f',
+			description: 'Tweet screenshot output filename',
+		},
 		width: {
 			type: Number,
 			alias: 'w',
@@ -47,6 +52,24 @@ const argv = cli({
 			default: 'en',
 			placeholder: '<locale>',
 		},
+		showComments: {
+			type: Boolean,
+			alias: 's',
+			description: 'Show comments',
+			default: false,
+		},
+		fillLikeButton: {
+			type: Boolean,
+			alias: 'l',
+			description: 'Fill the like button',
+			default: false,
+		},
+		fillCommentButton: {
+			type: Boolean,
+			alias: 'c',
+			description: 'Fill the comment button',
+			default: false,
+		},
 	},
 
 	help: {
@@ -59,6 +82,7 @@ const argv = cli({
 			'',
 			'# Snapshot a tweet with dark mode and 900px width',
 			'snap-tweet https://twitter.com/Interior/status/463440424141459456 --width 900 --dark-mode',
+			,
 		],
 	},
 });
@@ -97,7 +121,7 @@ const argv = cli({
 				tweetId,
 				options,
 			);
-			const fileName = `snap-tweet-${recommendedFileName}`;
+			const fileName = `${recommendedFileName}`;
 
 			if (options.outputDir) {
 				const filePath = await unusedFilename(path.resolve(options.outputDir, fileName));
