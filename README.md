@@ -119,14 +119,17 @@ Usage:
   $ snap-tweet <...tweet urls>
 
 Options:
-  -o, --output-dir <path>  Tweet screenshot output directory
-  -w, --width <width>      Width of tweet (default: 550)
-  -t, --show-thread        Show tweet thread
-  -d, --dark-mode          Show tweet in dark mode
-  -l, --locale <locale>    Locale (default: en)
-  -h, --help               Display this message
-  -v, --version            Display version number
-```
+  -d, --dark-mode                       Show tweet in dark mode
+  -c, --fill-comment-button             Fill the comment button
+  -l, --fill-like-button                Fill the like button
+  -h, --help                            Show help
+      --locale <locale>                 Locale (default: "en")
+  -o, --output-dir <path>               Tweet screenshot output directory
+  -f, --output-filename <string>        Tweet screenshot output filename
+  -s, --show-comments                   Show comments
+  -t, --show-thread                     Show tweet thread
+  -v, --version                         Show version
+  -w, --width <width>                   Width of tweet (default: 550)```
 
 ## 🏋️‍♀️ Motivation
 It all started when I simply wanted to embed a couple tweets into a Google Doc...
