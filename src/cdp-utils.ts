@@ -85,7 +85,7 @@ export const screenshotNode = async (
 				y: 0,
 				width: model.width,
 				height: model.height,
-				scale: 1,
+				scale: 2,
 			},
 		});
 
