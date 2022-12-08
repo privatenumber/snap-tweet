@@ -195,7 +195,7 @@ class TweetCamera {
 		const { targetId } = await browserClient.Target.createTarget({
 			url: getEmbeddableTweetUrl(tweetId, options),
 			width: options.width ?? 550,
-			height: 1000,
+			height: 3000,
 		});
 
 		const client = await CDP({
