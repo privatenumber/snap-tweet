@@ -70,6 +70,12 @@ const argv = cli({
 			description: 'Fill the comment button',
 			default: false,
 		},
+		hideFollowButton: {
+			type: Boolean,
+			alias: 'b',
+			description: 'Hide the follow button',
+			default: false
+		},
 	},
 
 	help: {
