@@ -76,6 +76,12 @@ const argv = cli({
 			description: 'Hide the follow button',
 			default: false
 		},
+		scale:{
+			type: Number,
+			alias: 's',
+			description: 'Scale of tweet (to increase the resolution)',
+			default: 1,
+		}
 	},
 
 	help: {

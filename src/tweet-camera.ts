@@ -19,6 +19,7 @@ interface Options {
 	showComments?: boolean;
 	outputFilename?: string;
 	hideFollowButton?: boolean;
+	scale?: number;
 }
 
 const getEmbeddableTweetUrl = (tweetId: string, options: Options) => {
@@ -274,7 +275,7 @@ class TweetCamera {
 		}
 
 		// Screenshot only the tweet
-		const snapshot = await screenshotNode(client.Page, client.DOM, tweetContainerNodeId);
+		const snapshot = await screenshotNode(client.Page, client.DOM, tweetContainerNodeId, options.scale);
 
 		client.Target.closeTarget({
 			targetId,

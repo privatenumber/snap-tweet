@@ -1,4 +1,4 @@
-import pRetry from 'p-retry';
+import pRetry, { Options } from 'p-retry';
 
 export const waitForNetworkIdle = (
 	Network,
@@ -76,6 +76,7 @@ export const screenshotNode = async (
 	Page,
 	DOM,
 	nodeId: number,
+	scale: number,
 ) => {
 	try {
 		const { model } = await DOM.getBoxModel({ nodeId });
@@ -85,7 +86,7 @@ export const screenshotNode = async (
 				y: 0,
 				width: model.width,
 				height: model.height,
-				scale: 2,
+				scale: scale,
 			},
 		});
 
