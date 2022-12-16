@@ -133,6 +133,8 @@ Options:
   -t, --show-thread                     Show tweet thread
       --version                         Show version
   -w, --width <width>                   Width of tweet (default: 550)
+```
+
 
 ## 🏋️‍♀️ Motivation
 It all started when I simply wanted to embed a couple tweets into a Google Doc...
