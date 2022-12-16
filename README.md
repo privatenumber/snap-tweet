@@ -123,13 +123,16 @@ Options:
   -c, --fill-comment-button             Fill the comment button
   -l, --fill-like-button                Fill the like button
   -h, --help                            Show help
+  -b, --hide-follow-button              Hide the follow button
       --locale <locale>                 Locale (default: "en")
   -o, --output-dir <path>               Tweet screenshot output directory
   -f, --output-filename <string>        Tweet screenshot output filename
+  -x, --scale <number>                  Scale of tweet (multiplier to increase the resolution)     
+                                        (default: 1)
   -s, --show-comments                   Show comments
   -t, --show-thread                     Show tweet thread
-  -v, --version                         Show version
-  -w, --width <width>                   Width of tweet (default: 550)```
+      --version                         Show version
+  -w, --width <width>                   Width of tweet (default: 550)
 
 ## 🏋️‍♀️ Motivation
 It all started when I simply wanted to embed a couple tweets into a Google Doc...

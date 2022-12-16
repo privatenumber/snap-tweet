@@ -78,8 +78,8 @@ const argv = cli({
 		},
 		scale:{
 			type: Number,
-			alias: 's',
-			description: 'Scale of tweet (to increase the resolution)',
+			alias: 'x',
+			description: 'Scale of tweet (multiplier to increase the resolution)',
 			default: 1,
 		}
 	},
