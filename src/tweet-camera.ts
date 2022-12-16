@@ -14,6 +14,12 @@ interface Options {
 	darkMode?: boolean;
 	showThread?: boolean;
 	locale?: string;
+	fillLikeButton?: boolean;
+	fillCommentButton?: boolean;
+	showComments?: boolean;
+	outputFilename?: string;
+	hideFollowButton?: boolean;
+	scale?: number;
 }
 
 const getEmbeddableTweetUrl = (tweetId: string, options: Options) => {
@@ -59,6 +65,61 @@ const waitForTweetLoad = Network => new Promise<void>((resolve, reject) => {
 		}
 	});
 });
+
+const hideFollowButton = async (client: any, tweetContainerNodeId: number, options: Options) => {
+	if(options.hideFollowButton){
+		// hide the follow button
+		const followButtonNodeId = await querySelector(client.DOM, tweetContainerNodeId, 'div[class$="css-1dbjc4n r-18u37iz r-1q142lx"]').catch(() => null);
+		(followButtonNodeId && hideNode(client.DOM, followButtonNodeId));
+	}
+}
+
+const removeComments = async (client: any, tweetContainerNodeId: number, options: Options) => {
+	if(!options.showComments){
+		// Remove the "Read 10K replies" button
+		client.DOM.removeNode({
+			nodeId: await querySelector(
+				client.DOM,
+				tweetContainerNodeId,
+				'.css-1dbjc4n.r-kzbkwu.r-1h8ys4a',
+			),
+		})			
+	}
+}
+
+const fillSvgCSS = (darkMode : boolean) => {
+	return `fill: none; stroke: ${darkMode ? "#8b98a5" : "#536471" }; stroke-width: 2px; stroke-linejoin: round;`;
+}
+
+const fillLikeButton = async(client: any, tweetContainerNodeId: number, options: Options) => {
+	if(!options.fillLikeButton){
+		// change the like button to unfilled
+		client.DOM.setAttributeValue({
+			nodeId: await querySelector(
+				client.DOM,
+				tweetContainerNodeId,
+				'svg[class$="r-vkub15 r-4qtqp9 r-1sreavd r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"]',	
+			),
+			name: 'style',
+			value: fillSvgCSS(options.darkMode),
+		});
+	}
+}
+
+const fillCommentButton = async(client: any, tweetContainerNodeId: number, options: Options) => {
+	if(!options.fillCommentButton){
+		// change the comment button to unfilled
+		client.DOM.setAttributeValue({
+			nodeId: await querySelector(
+				client.DOM,
+				tweetContainerNodeId,
+				'svg[class$="r-1cvl2hr r-4qtqp9 r-4r3dic r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"]',
+			),
+			name: 'style',
+			value: fillSvgCSS(options.darkMode),
+		});
+	}
+}
 
 class TweetCamera {
 	chrome: LaunchedChrome;
@@ -110,6 +171,10 @@ class TweetCamera {
 		tweetId: string,
 		options: Options = {},
 	) {
+		if(options.outputFilename){
+			return options.outputFilename;
+		}
+
 		const nameComponents = [username, tweetId];
 
 		if (options.width !== 550) {
@@ -128,8 +193,10 @@ class TweetCamera {
 			nameComponents.push(options.locale);
 		}
 
-		return `${nameComponents.join('-')}.png`;
+		return `snap-tweet-${nameComponents.join('-')}.png`;
 	}
+
+	
 
 	async snapTweet(
 		tweetId: string,
@@ -139,7 +206,7 @@ class TweetCamera {
 		const { targetId } = await browserClient.Target.createTarget({
 			url: getEmbeddableTweetUrl(tweetId, options),
 			width: options.width ?? 550,
-			height: 1000,
+			height: 3000,
 		});
 
 		const client = await CDP({
@@ -159,9 +226,13 @@ class TweetCamera {
 		// "Copy link to Tweet" button
 		const hideCopyLinkButtonNodeId = await querySelector(client.DOM, tweetContainerNodeId, '[role="button"]').catch(() => null);
 
+
 		await Promise.all([
 			// "Copy link to Tweet" button
 			(hideCopyLinkButtonNodeId && hideNode(client.DOM, hideCopyLinkButtonNodeId)),
+
+			// Hide the "Follow" button
+			hideFollowButton(client, tweetContainerNodeId, options),
 
 			// Info button - can't use aria-label because of i18n
 			hideNode(
@@ -174,13 +245,14 @@ class TweetCamera {
 			),
 
 			// Remove the "Read 10K replies" button
-			client.DOM.removeNode({
-				nodeId: await querySelector(
-					client.DOM,
-					tweetContainerNodeId,
-					'.css-1dbjc4n.r-kzbkwu.r-1h8ys4a',
-				),
-			}),
+			removeComments(client, tweetContainerNodeId, options),
+			
+			// Unfill the like button
+			fillLikeButton(client, tweetContainerNodeId, options),
+
+			// Unfill the comment button
+			fillCommentButton(client, tweetContainerNodeId, options),
+
 
 			// Unset max-width to fill window width
 			client.DOM.setAttributeValue({
@@ -203,7 +275,7 @@ class TweetCamera {
 		}
 
 		// Screenshot only the tweet
-		const snapshot = await screenshotNode(client.Page, client.DOM, tweetContainerNodeId);
+		const snapshot = await screenshotNode(client.Page, client.DOM, tweetContainerNodeId, options.scale);
 
 		client.Target.closeTarget({
 			targetId,
