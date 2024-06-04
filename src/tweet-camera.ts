@@ -92,7 +92,7 @@ class TweetCamera {
 
 	static parseTweetUrl(tweetUrl: string) {
 		assert(tweetUrl, 'Tweet URL must be passed in');
-		const [, username, tweetId] = tweetUrl.match(/twitter.com\/(\w{1,15})\/status\/(\d+)/) ?? [];
+		const [, username, tweetId] = tweetUrl.match(/(?:twitter|x)\.com\/(\w{1,15})\/status\/(\d+)/) ?? [];
 
 		assert(
 			username && tweetId,
